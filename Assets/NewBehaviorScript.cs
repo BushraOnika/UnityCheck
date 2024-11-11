@@ -19,7 +19,7 @@ public class NewBehaviorScript : MonoBehaviour
         // Specify the key for jump (Space Using for jump)
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * 7, ForceMode.VelocityChange);
+            GetComponent<Rigidbody>().AddForce(Vector3.up * 5, ForceMode.VelocityChange);
         }
 
         // Left Right movement with keyboard
