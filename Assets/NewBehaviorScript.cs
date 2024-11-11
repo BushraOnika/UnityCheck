@@ -15,15 +15,22 @@ public class NewBehaviorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // Specify the key for jump (Space Using for jump)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * 7, ForceMode.VelocityChange);
+        }
+
         // Left Right movement with keyboard
         keyinput = Input.GetAxis("Horizontal");
         GetComponent<Rigidbody>().linearVelocity = new Vector3(keyinput,GetComponent<Rigidbody>().linearVelocity.y, 0);
 
 
        
-        verticalInput = Input.GetAxis("Vertical");
+        // verticalInput = Input.GetAxis("Vertical");
 
         // Move in both directions Up Down Right Left With keyboard
-        GetComponent<Rigidbody>().linearVelocity = new Vector3(keyinput, verticalInput, 0);
+        // GetComponent<Rigidbody>().linearVelocity = new Vector3(keyinput, verticalInput, 0);
     }
 }
