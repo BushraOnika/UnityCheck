@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlatformScript : MonoBehaviour
 {
@@ -15,7 +16,16 @@ public class PlatformScript : MonoBehaviour
         
     }
     private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Hello");
+    {    // if collide with candi or platform then show hello
+         // Debug.Log("Hello");
+        if (collision.gameObject.CompareTag("candy")) {
+            // Debug.Log("Candy");
+            SceneManager.LoadScene(1);
+        }
+        if (collision.gameObject.CompareTag("Respawn"))
+        {
+            //Debug.Log("Game Over");
+            SceneManager.LoadScene(0);
+        }
     }
 }
