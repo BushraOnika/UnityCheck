@@ -2,7 +2,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlatformScript : MonoBehaviour
+
 {
+    public int scene;
+    public int nextScene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,12 +23,15 @@ public class PlatformScript : MonoBehaviour
          // Debug.Log("Hello");
         if (collision.gameObject.CompareTag("candy")) {
             // Debug.Log("Candy");
-            SceneManager.LoadScene(1);
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            SceneManager.LoadScene(nextScene);
         }
         if (collision.gameObject.CompareTag("Respawn"))
         {
             //Debug.Log("Game Over");
-            SceneManager.LoadScene(0);
+            // SceneManager.LoadScene(0);
+            SceneManager.LoadScene(scene);
+
         }
     }
 }
